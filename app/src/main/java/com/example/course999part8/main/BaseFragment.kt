@@ -13,7 +13,7 @@ abstract class BaseFragment<T : Representative<*>>(@LayoutRes layoutId: Int) : F
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        representative = (requireActivity() as ProvideRepresentative)
+        representative = (requireActivity().application as ProvideRepresentative)
             .provideRepresentative(clasz)
     }
 }

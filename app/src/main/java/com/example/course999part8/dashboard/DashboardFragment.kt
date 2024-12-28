@@ -38,7 +38,7 @@ class DashboardFragment : Fragment() {
         val button = view.findViewById<CustomButton>(R.id.playButton)
         val textView = view.findViewById<CustomTextView>(R.id.showPlayingTextView)
         button.setOnClickListener { dashboardRepresentative.play() }
-        callback = object : UiObserver<PremiumDashboardUiState> {
+        callback = object : DashboardObserver {
             override fun update(data: PremiumDashboardUiState) {
                 data.show(button, textView)
             }
@@ -57,4 +57,8 @@ class DashboardFragment : Fragment() {
         Log.d("varius", "Dashboard onPause")
         dashboardRepresentative.stopGettingUpdates()
     }
+}
+
+interface DashboardObserver : UiObserver<PremiumDashboardUiState> {
+    override fun isEmpty() = false
 }

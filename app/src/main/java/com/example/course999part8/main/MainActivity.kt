@@ -41,5 +41,5 @@ class MainActivity : AppCompatActivity(), ProvideRepresentative {
 }
 
 interface ActivityCallback : UiObserver<Screen> {
-
+    override fun isEmpty() = false
 }

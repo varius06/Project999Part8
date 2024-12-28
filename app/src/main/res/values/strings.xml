@@ -3,4 +3,5 @@
     <string name="playing">Playing</string>
     <string name="play">Play</string>
     <string name="subscribe">subscribe</string>
+    <string name="subscribed">Successfully Subscribed! \nOk</string>
 </resources>

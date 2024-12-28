@@ -15,6 +15,8 @@ class App : Application(), ProvideRepresentative, ClearRepresentative {
         super.onCreate()
         core = Core.Base(this)
         factory = ProvideRepresentative.Factory(core, this)
+        val processId = android.os.Process.myPid()
+        Log.d("varius", "app onCreate + $processId")
     }
 
     override fun clear(clasz: Class<out Representative<*>>) {
@@ -38,7 +40,7 @@ class App : Application(), ProvideRepresentative, ClearRepresentative {
             Log.d("course", "very first time")
             handleDeath.firstOpening()
         } else {
-            if (handleDeath.wasDeathHappened()) {
+            if (handleDeath.didDeathHappened()) {
                 Log.d("course", "death happened")
                 handleDeath.deathHandled()
             } else {

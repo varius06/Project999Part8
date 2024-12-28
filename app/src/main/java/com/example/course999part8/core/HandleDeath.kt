@@ -3,7 +3,7 @@ package com.example.course999part8.core
 interface HandleDeath {
     fun firstOpening()
 
-    fun wasDeathHappened(): Boolean
+    fun didDeathHappened(): Boolean
 
     fun deathHandled()
 
@@ -14,7 +14,7 @@ interface HandleDeath {
             deathHappened = false
         }
 
-        override fun wasDeathHappened(): Boolean {
+        override fun didDeathHappened(): Boolean {
             return deathHappened
         }
 
